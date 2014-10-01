@@ -1,2 +1,4 @@
 PS1="\033[0;32m\h\033[0m:\w$ "
 
+export PATH="$HOME/git/bin-dbwebb:${PATH}"
+
