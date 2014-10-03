@@ -1,6 +1,7 @@
 PS1="\033[0;32m\h\033[0m:\w$ "
 
 export PATH="$HOME/git/bin-dbwebb:${PATH}"
+export EDITOR="vim"
 
 alias ls='ls -F --color=auto'
 alias grep='grep --color=auto'
@@ -8,4 +9,5 @@ alias grep='grep --color=auto'
 alias ll='ls -l'
 alias la='ls -A'
 alias lla='ls -Al'
+
 
