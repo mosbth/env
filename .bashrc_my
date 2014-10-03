@@ -10,6 +10,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias lla='ls -Al'
 
-alias tbs tmux new-session -s basic 
-alias tb tmux attach -t basic            
+alias tbs="tmux new-session -s basic"
+alias tb="tmux attach -t basic"
+
 
