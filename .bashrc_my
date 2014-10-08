@@ -1,6 +1,8 @@
 PS1="\033[0;32m\h\033[0m:\w$ "
 
-export PATH="$HOME/git/bin-dbwebb:${PATH}"
+export PATH="${PATH}:/usr/local/sbin:/sbin:/usr/sbin"
+export PATH="${PATH}:$HOME/git/bin-dbwebb"
+
 export EDITOR="vim"
 
 alias ls='ls -F --color=auto'
