@@ -17,4 +17,6 @@ alias lla='ls -Al'
 alias tbs="tmux new-session -s basic"
 alias tb="tmux attach -t basic"
 
+alias sshfs-www2.sifero.se="sshfs -o idmap=user mos@www2.sifero.se:/home/mos /home/mos/mnt/www2.sifero.se/"
+alias sshfs-dbwebb.se="sshfs -o port=2222 -o idmap=user mos@dbwebb.se:/home/mos /home/mos/mnt/dbwebb.se/"  
 
