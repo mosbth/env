@@ -12,7 +12,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 alias ls="ls -GFh"
 #alias ls='ls -F --color=auto'
-#alias grep='grep --color=auto'
+alias grep='grep --color=auto'
 
 alias ll='ls -l'
 alias la='ls -A'
@@ -24,3 +24,7 @@ alias tb="tmux attach -t basic"
 alias sshfs-www2.sifero.se="sshfs -o idmap=user mos@www2.sifero.se:/home/mos /home/mos/mnt/www2.sifero.se/"
 alias sshfs-dbwebb.se="sshfs -o port=2222 -o idmap=user mos@dbwebb.se:/home/mos /home/mos/mnt/dbwebb.se/"  
 
+alias cd..="cd .."
+alias s="sudo"
+alias h="history"
+alias hg="history | grep"
