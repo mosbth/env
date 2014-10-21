@@ -26,5 +26,9 @@ alias sshfs-dbwebb.se="sshfs -o port=2222 -o idmap=user mos@dbwebb.se:/home/mos 
 
 alias cd..="cd .."
 alias s="sudo"
+
+# History
+export HISTFILESIZE=
+export HISTSIZE=
 alias h="history"
 alias hg="history | grep"
