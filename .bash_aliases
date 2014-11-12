@@ -17,3 +17,8 @@ alias sshfs-dbwebb.se='sshfs -o port=2222 -o idmap=user mos@dbwebb.se:/home/mos 
 alias tmux_basic_start='tmux new-session -s basic'
 alias tmux_basic='tmux attach -t basic'
 
+alias gpl='git pull'
+alias gps='git push'
+alias gc='git commit'
+alias gs='git status'
+
