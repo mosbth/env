@@ -1,6 +1,6 @@
 #
 #
-FILES = .bash_aliases .bashrc_my .tmux.conf .vimrc
+FILES = .bash_aliases .bashrc_my .tmux.conf .vimrc .gitconfig
 DIRS = .vim
 
 install:
