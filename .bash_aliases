@@ -23,4 +23,5 @@ alias gc='git commit'
 alias gs='git status'
 alias ga='git add'
 alias gh='git hist'
+alias gb='git branch'
 
