@@ -6,7 +6,7 @@ PS1="\[$green\]\h\[$white\]:\w$\[$reset\] "
 export LC_CTYPE="C.UTF-8"
 
 export PATH="${PATH}:/usr/local/sbin:/sbin:/usr/sbin"
-export PATH="${PATH}:$HOME/git/bin-dbwebb"
+#export PATH="${PATH}:$HOME/git/bin-dbwebb"
 
 export EDITOR="vim"
 
