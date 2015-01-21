@@ -1,0 +1,17 @@
+"*":
+  "exception-reporting":
+    userId: "1c41ebe9-0a29-7a50-8b25-1e1f298b5311"
+  welcome:
+    showOnStartup: false
+  editor:
+    showInvisibles: true
+    tabLength: 4
+    invisibles: {}
+  linter: {}
+  "linter-phpcs": {}
+  core:
+    disabledPackages: [
+      "linter-shellcheck"
+      "linter-phpcs"
+      "linter-phpmd"
+    ]
