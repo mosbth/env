@@ -1,3 +1,8 @@
 [alias]
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 
+[user]
+	name = Mikael Roos
+	email = mikael.t.h.roos@gmail.com
+[push]
+	default = matching
