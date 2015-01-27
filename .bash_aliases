@@ -25,3 +25,5 @@ alias ga='git add'
 alias gh='git hist'
 alias gb='git branch'
 
+alias dw='dbwebb'
+
