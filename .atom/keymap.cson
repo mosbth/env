@@ -23,3 +23,9 @@
 # This file uses CoffeeScript Object Notation (CSON).
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
+
+'atom-text-editor':
+    'alt-right': 'editor:move-to-end-of-line'
+    'shift-alt-right': 'editor:select-to-end-of-line'
+    'alt-left': 'editor:move-to-beginning-of-line'
+    'shift-alt-left': 'editor:select-to-beginning-of-line'

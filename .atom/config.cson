@@ -1,17 +1,28 @@
-"*":
-  "exception-reporting":
-    userId: "1c41ebe9-0a29-7a50-8b25-1e1f298b5311"
-  welcome:
-    showOnStartup: false
-  editor:
-    showInvisibles: true
-    tabLength: 4
-    invisibles: {}
-  linter: {}
-  "linter-phpcs": {}
-  core:
-    disabledPackages: [
-      "linter-shellcheck"
-      "linter-phpcs"
-      "linter-phpmd"
-    ]
+'global':
+  '*':
+    'exception-reporting':
+      'userId': '1c41ebe9-0a29-7a50-8b25-1e1f298b5311'
+    'welcome':
+      'showOnStartup': false
+    'editor':
+      'showInvisibles': true
+      'tabLength': 4
+    'core':
+      'disabledPackages': [
+        'linter-shellcheck'
+        'linter-phpcs'
+        'linter-phpmd'
+      ]
+  'exception-reporting':
+    'userId': 'f1311b16-a096-7a63-0149-ddc9c884d3da'
+  'welcome':
+    'showOnStartup': false
+  'editor':
+    'tabLength': 4
+    'softWrapAtPreferredLineLength': true
+    'invisibles': {}
+    'autoIndentOnPaste': false
+  'whitespace':
+    'removeTrailingWhitespace': false
+  'linter': {}
+  'core': {}
