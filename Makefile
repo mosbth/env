@@ -8,6 +8,5 @@ install:
 		rsync -av .vim ~
 		rsync -av .atom ~
 
-.bashrc:
+bashrc:
 		echo "source .bashrc_my" >> ~/.bashrc
-

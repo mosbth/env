@@ -6,32 +6,12 @@ PS1="\[$green\]\h\[$white\]:\w$\[$reset\] "
 export LC_CTYPE="C.UTF-8"
 
 export PATH="${PATH}:/usr/local/sbin:/sbin:/usr/sbin"
-#export PATH="${PATH}:$HOME/git/bin-dbwebb"
 
 export EDITOR="vim"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-alias ls="ls -GFh"
-#alias ls='ls -F --color=auto'
-alias grep='grep --color=auto'
-
-alias ll='ls -l'
-alias la='ls -A'
-alias lla='ls -Al'
-
-alias tbs="tmux new-session -s basic"
-alias tb="tmux attach -t basic"
-
-alias sshfs-www2.sifero.se="sshfs -o idmap=user mos@www2.sifero.se:/home/mos /home/mos/mnt/www2.sifero.se/"
-alias sshfs-dbwebb.se="sshfs -o port=2222 -o idmap=user mos@dbwebb.se:/home/mos /home/mos/mnt/dbwebb.se/"  
-
-alias cd..="cd .."
-alias s="sudo"
-
 # History
 export HISTFILESIZE=
 export HISTSIZE=
-alias h="history"
-alias hg="history | grep"

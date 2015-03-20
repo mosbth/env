@@ -4,5 +4,6 @@
 [user]
 	name = Mikael Roos
 	email = mikael.t.h.roos@gmail.com
+    
 [push]
 	default = matching

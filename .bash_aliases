@@ -1,16 +1,16 @@
-export PATH="$HOME/bin:$PATH"
+# ls
+alias ls="ls -Fh --color=auto"
+alias la='ls -aFh --color=auto'
+alias ll='ls -lFh --color=auto'
+alias lla'=ls -laFh --color=auto'
 
-alias ls='ls --color=auto'
-alias la='ls -aF'
-alias ll='ls -lF'
-alias lla'=ls -laF'
-
+# Useful
 alias grep='grep --color=auto'
-
 alias psg="ps -aux | grep "
+alias cd..="cd .."
+alias s="sudo"
 
-alias xt=xterm
-
+# sshfs
 alias sshfs-www2.sifero.se='sshfs -o idmap=user mos@www2.sifero.se:/home/mos /home/mos/mnt/www2.sifero.se/'
 alias sshfs-dbwebb.se='sshfs -o port=2222 -o idmap=user mos@dbwebb.se:/home/mos /home/mos/mnt/dbwebb.se/'
 
@@ -24,6 +24,7 @@ alias tb=tmux_basic
 alias gpl='git pull'
 alias gps='git push'
 alias gc='git commit'
+alias gcam='git commit -a -m'
 alias gs='git status'
 alias ga='git add'
 alias gh='git hist'
@@ -36,3 +37,9 @@ alias dwv='dbwebb-validate'
 # Atom
 alias apm-deinstall-all="apm deinstall $( ls $HOME/.atom/packages/ )"
 alias apm-install-all="apm install linter linter-less linter-pylint linter-jscs linter-phpcs block-travel linter-jshint linter-phpmd linter-csslint linter-pep8 linter-shellcheck linter-htmlhint linter-php linter-xmllint"
+
+# History
+export HISTFILESIZE=
+export HISTSIZE=
+alias h="history"
+alias hg="history | grep"
