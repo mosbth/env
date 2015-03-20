@@ -35,7 +35,7 @@ alias dw='dbwebb'
 alias dwv='dbwebb-validate'
 
 # Atom
-alias apm-deinstall-all="apm deinstall $( ls $HOME/.atom/packages/ )"
+alias apm-deinstall-all="apm deinstall \$( ls $HOME/.atom/packages/ )"
 alias apm-install-all="apm install linter linter-less linter-pylint linter-jscs linter-phpcs block-travel linter-jshint linter-phpmd linter-csslint linter-pep8 linter-shellcheck linter-htmlhint linter-php linter-xmllint"
 
 # History
