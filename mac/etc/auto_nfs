@@ -1,0 +1,5 @@
+/nfs/share    -fstype=nfs,noowners,nolockd,resvport,hard,bg,intr,rw,tcp,nfc nfs://megamic:/mnt/6a914748-6b88-4fc0-be3d-76b7be76df54
+
+#share	-fstype=nfs,rw,bg,hard,intr,tcp	megamic:/mnt/6a914748-6b88-4fc0-be3d-76b7be76df54
+#share	-fstype=nfs,rw,bg,hard,intr,tcp	megamic:/exports/share
+#share	megamic:/exports/share
