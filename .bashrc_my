@@ -9,9 +9,16 @@ export PATH="${PATH}:/usr/local/sbin:/sbin:/usr/sbin"
 
 export EDITOR="vim"
 
+# Color output
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # History
 export HISTFILESIZE=
 export HISTSIZE=
+
+# Locale
+setenv PYTHONIOENCODING UTF-8
+setenv LANG C.UTF-8
+setenv LC_CTYPE C.UTF-8
+
