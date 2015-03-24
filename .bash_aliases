@@ -1,8 +1,8 @@
 # ls
-alias ls="ls -Fh --color=auto"
-alias la='ls -aFh --color=auto'
-alias ll='ls -lFh --color=auto'
-alias lla'=ls -laFh --color=auto'
+alias ls="ls -Fh"
+alias la='ls -aFh'
+alias ll='ls -lFh'
+alias lla'=ls -laFh'
 
 # Useful
 alias grep='grep --color=auto'
@@ -36,7 +36,7 @@ alias dwv='dbwebb-validate'
 
 # Atom
 alias apm-deinstall-all="apm deinstall \$( ls $HOME/.atom/packages/ )"
-alias apm-install-all="apm install linter linter-less linter-pylint linter-jscs linter-phpcs block-travel linter-jshint linter-phpmd linter-csslint linter-pep8 linter-shellcheck linter-htmlhint linter-php linter-xmllint"
+alias apm-install-all="apm install linter linter-less linter-pylint linter-jscs linter-phpcs block-travel linter-jshint linter-phpmd linter-csslint linter-pep8 linter-shellcheck linter-htmlhint linter-php linter-xmllint remote-edit"
 
 # History
 export HISTFILESIZE=

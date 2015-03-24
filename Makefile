@@ -9,4 +9,8 @@ install:
 		rsync -av .atom ~
 
 bashrc:
-		echo "source .bashrc_my" >> ~/.bashrc
+		echo "source ~/.bashrc_my" >> ~/.bashrc
+
+aliases:
+		echo "source ~/.bash_aliases" >> ~/.bashrc
+
