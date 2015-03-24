@@ -18,7 +18,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 # Locale
-setenv PYTHONIOENCODING UTF-8
-setenv LANG C.UTF-8
-setenv LC_CTYPE C.UTF-8
+export PYTHONIOENCODING=UTF-8
+export LANG=C.UTF-8
+export LC_CTYPE=C.UTF-8
 
