@@ -11,8 +11,11 @@ alias cd..="cd .."
 alias s="sudo"
 
 # sshfs
+# -oauto_cache,reconnect,Ciphers=arcfour
 alias sshfs-www2.sifero.se='sshfs -o idmap=user mos@www2.sifero.se:/home/mos /home/mos/mnt/www2.sifero.se/'
-alias sshfs-dbwebb.se='sshfs -o port=2222 -o idmap=user mos@dbwebb.se:/home/mos /home/mos/mnt/dbwebb.se/'
+alias sshfs-dbwebb.se='sshfs -oauto_cache,reconnect,Ciphers=arcfour,port=2222,idmap=user mos@dbwebb.se:/home/mos /home/mos/mnt/dbwebb.se/'
+alias sshfs-stud='sshfs -o port=22 -o idmap=user mosstud@ssh.student.bth.se:/home/saxon/teachers/com/mosstud /home/mos/mnt/ssh.student.bth.se/'
+alias sshfs-stud-all='sshfs -o port=22 -o idmap=user mosstud@ssh.student.bth.se:/home/saxon/students /home/mos/mnt/ssh.student.bth.se-students/'
 
 # tmux
 alias tmux_basic_start='tmux new-session -s basic'
