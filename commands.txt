@@ -1,0 +1,12 @@
+sudo /usr/sbin/locale-gen 
+
+cat install.packages.wheezy.server | xargs sudo apt-get -y install
+
+cat ~/.ssh/id_dsa.pub | ssh mos@server.com 'cat >>.ssh/authorized_keys'
+
+rsync -av -e "ssh -i $HOME/.ssh/id_rsa" mos@megamic.se:db/ db/
+
+rsync -av --exclude .git --exclude old --delete -e "ssh -i $HOME/.ssh/id_rsa" mos@megamic.se:git/dbwebb.se/htd/ htdocs/
+
+mysql -p -uroot dbw_forum < dbw_forum.sql
+

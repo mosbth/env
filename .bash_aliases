@@ -46,3 +46,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 alias h="history"
 alias hg="history | grep"
+
+# Install
+
+
