@@ -4,6 +4,11 @@ alias la='ls -aFh'
 alias ll='ls -lFh'
 alias lla'=ls -laFh'
 
+# grep
+alias grep='grep --color=auto'
+alias gr='grep --ignore-case --line-number'
+alias grr='gr --recursive'
+
 # Useful
 alias grep='grep --color=auto'
 alias psg="ps -aux | grep "
