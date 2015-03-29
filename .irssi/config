@@ -1,0 +1,7 @@
+settings = {
+  core = {
+    real_name = "Mikael Roos, BTH";
+    user_name = "mos";
+    nick = "mos";
+  };
+};
