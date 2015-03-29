@@ -19,6 +19,7 @@ libapache2-mod-dnssd
 libapache2-mod-php5
 git
 tmux
+irssi
 nginx
 mysql-server
 
