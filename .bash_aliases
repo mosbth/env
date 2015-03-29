@@ -10,6 +10,10 @@ alias psg="ps -aux | grep "
 alias cd..="cd .."
 alias s="sudo"
 
+# rsync
+alias rs='rsync -a -e "ssh"'
+alias rs2='rsync -a -e "ssh -p 2222"'
+
 # sshfs
 # -oauto_cache,reconnect,Ciphers=arcfour
 alias sshfs-www2.sifero.se='sshfs -o idmap=user mos@www2.sifero.se:/home/mos /home/mos/mnt/www2.sifero.se/'
