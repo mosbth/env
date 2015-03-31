@@ -7,6 +7,7 @@ install:
 		install $(FILES) ~
 		rsync -av .vim ~
 		rsync -av .atom ~
+		rsync -av bin/ $(HOME)/bin/
 
 bashrc:
 		echo "source ~/.bashrc_my" >> ~/.bashrc
