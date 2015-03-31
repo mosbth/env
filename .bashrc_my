@@ -22,3 +22,6 @@ export PYTHONIOENCODING=UTF-8
 export LANG=C.UTF-8
 export LC_CTYPE=C.UTF-8
 
+#eval `gnome-keyring-daemon --start`
+
+
