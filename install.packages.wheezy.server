@@ -1,7 +1,6 @@
 exim4-daemon-heavy
 python-pip
 vim
-libapache2-mod-php5     
 php-pear                
 php5                    
 php5-cli                
