@@ -24,8 +24,6 @@ alias rsv2='rsync -a -e "ssh -p 2222"'
 # ssh login
 alias ssh-cc1="ssh mos@cc1.dbwebb.se"
 alias ssh-do1="ssh mos@do1.dbwebb.se"
-alias ssh-desktop="ssh mos@desktop"
-alias ssh-megamic="ssh mos@megamic.se"
 alias ssh-www2="ssh mos@www2.megamic.se -p 2222"
 alias ssh-www5="ssh mos@www5.dbwebb.se -p 2222"
 alias ssh-mycom="ssh mos@mycom.com.bth.se -p 2222"
