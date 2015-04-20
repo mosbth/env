@@ -1,13 +1,27 @@
-127.0.0.1	localhost
-127.0.1.1 server.megamic.se server megamic.se
-                                             
-192.168.1.101 desktop debian                 
-192.168.1.102 kitchen                        
-192.168.1.104 pie raspberrypie
-192.168.1.200 mbpro                          
-                                             
+# Library
+192.168.1.100 server.megamic.se megamic server    # 1C:C1:DE:1C:76:2F
+192.168.1.101 pi.megamic.se pi                    # B8:27:EB:15:2B:16
+192.168.1.102 debian.megamic.se desktop debian    # 74:D0:2B:93:FC:28
+192.168.1.103 win.megamic.se win                  # 10:BF:48:BC:E1:0C
+192.168.1.104 mac.megamic.se mac
 
-# The following lines are desirable for IPv6 capable hosts
-::1     localhost ip6-localhost ip6-loopback
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
+# Moveable
+192.168.1.110 chrome.megamic.se chrome
+192.168.1.111 android.megamic.se android
+192.168.1.112 macbook.megamic.se macbook
+
+# Kitchen
+192.168.1.120 kitchen.megamic.se kitchen
+192.168.1.121 kitchen2.megamic.se kitchen2
+
+# Simon
+192.168.1.130 simon-win
+192.168.1.131 simon-mac
+192.168.1.132 simon-iphone
+192.168.1.133 simon-ipad
+
+# Felix
+192.168.1.140 felix-win
+192.168.1.141 felix-mac
+192.168.1.141 felix-iphone
+192.168.1.141 felix-ipad
