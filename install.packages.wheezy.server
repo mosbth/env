@@ -24,4 +24,6 @@ irssi
 nginx
 mysql-server
 nodejs
+dnsutils
+lynx
 
