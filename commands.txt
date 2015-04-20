@@ -11,3 +11,5 @@ rsync -av --exclude .git --exclude old --delete -e "ssh -i $HOME/.ssh/id_rsa" mo
 mysql -p -uroot dbw_forum < dbw_forum.sql
 
 ssh-add /home/$USER/.ssh/id_rsa
+
+dpkg-reconfigure tzdata
