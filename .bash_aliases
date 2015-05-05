@@ -51,6 +51,7 @@ alias gs='git status'
 alias ga='git add'
 alias gh='git hist'
 alias gb='git branch'
+alias gsd='git stash show -p stash@{0}'
 
 # dbwebb
 alias dw='dbwebb'
