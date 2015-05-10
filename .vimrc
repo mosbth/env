@@ -97,3 +97,7 @@ set statusline+=\ %P    "percent through file
 :map <Down> gj
 :map j gj
 
+"Fuzzy filefinder
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+
