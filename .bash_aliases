@@ -9,10 +9,16 @@ alias grep='grep --color=auto'
 alias gr='grep --ignore-case --line-number'
 alias grr='gr --recursive'
 
+# cd
+alias .="cd $HOME"
+alias ..="cd .."
+alias ...="cd ..; cd ..;"
+alias ....="cd ..; cd ..; cd ..;"
+alias .....="cd ..; cd ..; cd ..; cd ..;"
+
 # Useful
 alias grep='grep --color=auto'
 alias psg="ps -aux | grep "
-alias cd..="cd .."
 alias s="sudo"
 
 # rsync
