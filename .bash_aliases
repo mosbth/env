@@ -59,6 +59,8 @@ alias gh='git hist'
 alias gb='git branch'
 alias gsd='git stash show -p stash@{0}'
 alias gf='git fetch'
+alias gfu='git fetch upstream'
+alias gmu'git merge upstream/master'
 
 # dbwebb
 alias dw='dbwebb'
