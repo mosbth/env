@@ -10,7 +10,6 @@ alias gr='grep --ignore-case --line-number'
 alias grr='gr --recursive'
 
 # cd
-alias .="cd $HOME"
 alias ..="cd .."
 alias ...="cd ..; cd ..;"
 alias ....="cd ..; cd ..; cd ..;"
@@ -61,6 +60,7 @@ alias gsd='git stash show -p stash@{0}'
 alias gf='git fetch'
 alias gfu='git fetch upstream'
 alias gmu='git merge upstream/master'
+alias gsu='git submodule update --init --recursive'
 
 # dbwebb
 alias dw='dbwebb'
