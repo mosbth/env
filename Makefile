@@ -7,6 +7,7 @@ install:
 		install $(FILES) ~
 		rsync -av .vim ~
 		rsync -av .atom ~
+		rsync -av .config ~
 		rsync -av bin/ $(HOME)/bin/
 
 bashrc:
@@ -14,4 +15,3 @@ bashrc:
 
 aliases:
 		echo "source ~/.bash_aliases" >> ~/.bashrc
-
