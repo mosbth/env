@@ -1,0 +1,5 @@
+[ssh]
+findtime = 10800
+banaction = iptables-allports
+bantime = -1
+maxretry = 3
