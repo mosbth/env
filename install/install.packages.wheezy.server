@@ -21,7 +21,7 @@ libapache2-mod-php5
 git
 tmux
 irssi
-nginx
+#nginx
 mysql-server
 nodejs
 dnsutils

@@ -3,6 +3,8 @@
 FILES = .bash_aliases .bashrc_my .tmux.conf .vimrc .gitconfig
 DIRS = .vim
 
+.PHONY: install bashrc aliases
+
 install:
 		install $(FILES) ~
 		rsync -av .vim ~

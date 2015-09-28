@@ -1,6 +1,6 @@
 sudo /usr/sbin/locale-gen 
 
-cat install.packages.wheezy.server | xargs sudo apt-get -y install
+grep "^[^#;]" install.packages.wheezy.server | xargs sudo apt-get -y install
 
 cat ~/.ssh/id_dsa.pub | ssh mos@server.com 'cat >>.ssh/authorized_keys'
 
