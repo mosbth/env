@@ -100,4 +100,6 @@ set statusline+=\ %P    "percent through file
 "Fuzzy filefinder
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+"Makefile has hard tabs
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
