@@ -24,8 +24,10 @@ irssi
 #nginx
 mysql-server
 nodejs
+npm
 dnsutils
 lynx
 optipng
 libjpeg-progs
+curl
 
