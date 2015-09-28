@@ -53,6 +53,16 @@ k
 					<execute>atom</execute>
 				</action>
 			</item>
+			<item label="kdenlive">
+				<action name="Execute">
+					<execute>kdenlive</execute>
+				</action>
+			</item>
+			<item label="Filezilla">
+				<action name="Execute">
+					<execute>filezilla</execute>
+				</action>
+			</item>
 		</menu>
 		<!-- This requires the presence of the 'menu' package to work -->
 		<menu id="/Debian"/>
