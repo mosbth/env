@@ -1,22 +1,31 @@
+127.0.0.1	localhost
+127.0.0.1 	dev.sjalskarlek.se anna avenir
+127.0.0.1	local.greenspire.se
+127.0.0.1	local.dianaebe.com
+127.0.0.1	local.sjalskarlek.se
+127.0.0.1   	local.dbwebb.se local.anderspbygg.se local.mikaelroos.se local.felixroos.se local.simonroos.se local.sifero.se local.wordpress.se
+127.0.0.1	wp-206889.mysql.binero.se
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
 # Library
 192.168.1.100 server.megamic.se megamic server    # 1C:C1:DE:1C:76:2F
 192.168.1.101 pi.megamic.se pi                    # B8:27:EB:15:2B:16
 192.168.1.102 debian.megamic.se desktop debian    # 74:D0:2B:93:FC:28
 192.168.1.103 win.megamic.se win                  # 10:BF:48:BC:E1:0C
-192.168.1.104 mac.megamic.se mac                  # 58:b0:35:fb:de:7a
-192.168.1.105 mac1.megamic.se mac1                # f8:1e:df:f2:66:eb
+192.168.1.104 mac.megamic.se mac
 
 # Moveable
 192.168.1.110 chrome.megamic.se chrome
 192.168.1.111 android.megamic.se android
-192.168.1.112 macbook.megamic.se macbook          # 00:23:6c:99:a5:d2
-192.168.1.113 macbook1.megamic.se macbook1        # 00:23:df:a9:45:04
+192.168.1.112 macbook.megamic.se macbook
 
 # Kitchen
-192.168.1.120 kitchen.megamic.se kitchen          # 00:1e:c2:b0:64:fa 
-192.168.1.121 kitchen1.megamic.se kitchen1        # 00:1e:c2:15:93:bc
-192.168.1.122 kitchen2.megamic.se kitchen2        # 68:5b:35:a4:55:8a
-192.168.1.123 kitchen21.megamic.se kitchen21      # c8:e0:eb:50:05:69
+192.168.1.120 kitchen.megamic.se kitchen
+192.168.1.121 kitchen2.megamic.se kitchen2
 
 # Simon
 192.168.1.130 simon-win
@@ -29,3 +38,4 @@
 192.168.1.141 felix-mac
 192.168.1.141 felix-iphone
 192.168.1.141 felix-ipad
+
