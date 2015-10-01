@@ -11,6 +11,7 @@ install:
 		rsync -av .atom ~
 		rsync -av .config ~
 		rsync -av bin/ $(HOME)/bin/
+		install desktop/Makefile $(HOME)
 
 bashrc:
 		echo "source ~/.bashrc_my" >> ~/.bashrc
