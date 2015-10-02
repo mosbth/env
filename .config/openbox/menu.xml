@@ -12,6 +12,11 @@ k
 				<execute>google-chrome</execute>
 			</action>
 		</item>
+		<item label="Google Chrome unstable">
+			<action name="Execute">
+				<execute>google-chrome-unstable</execute>
+			</action>
+		</item>
 		<item label="Firefox">
 			<action name="Execute">
 				<execute>firefox</execute>
