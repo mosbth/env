@@ -30,4 +30,6 @@ lynx
 optipng
 libjpeg-progs
 curl
+libxml2-utils
+
 
