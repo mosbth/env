@@ -203,6 +203,7 @@
         <wrap>no</wrap>
       </action>
     </keybind>
+    <!--
     <keybind key="S-A-Left">
       <action name="SendToDesktop">
         <to>left</to>
@@ -215,6 +216,7 @@
         <wrap>no</wrap>
       </action>
     </keybind>
+-->
     <keybind key="S-A-Up">
       <action name="SendToDesktop">
         <to>up</to>
