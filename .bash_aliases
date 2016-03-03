@@ -34,6 +34,7 @@ alias ssh-www2="ssh mos@www2.megamic.se -p 2222"
 alias ssh-www5="ssh mos@www5.dbwebb.se -p 2222"
 alias ssh-mycom="ssh mos@mycom.com.bth.se -p 2222"
 alias ssh-stud="ssh mosstud@ssh.student.bth.se"
+alias ssh-bth-pi="ssh mos@mospi1.clab.bth.se -p 2222"
 
 # sshfs
 # -oauto_cache,reconnect,Ciphers=arcfour
