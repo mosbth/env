@@ -25,4 +25,5 @@ export LC_CTYPE=C.UTF-8
 
 #eval `gnome-keyring-daemon --start`
 
-
+# Disable ctrl-s
+stty -ixon
