@@ -31,5 +31,9 @@ optipng
 libjpeg-progs
 curl
 libxml2-utils
+# php-yaml
+libyaml-dev
+#  linux-libc-dev needed?
+# sudo pecl install yaml-1.2.0
 
 
