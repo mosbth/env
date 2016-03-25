@@ -68,6 +68,21 @@ k
 					<execute>filezilla</execute>
 				</action>
 			</item>
+			<item label="GIMP">
+				<action name="Execute">
+					<execute>gimp</execute>
+				</action>
+			</item>
+			<item label="gthumb">
+				<action name="Execute">
+					<execute>gthumb</execute>
+				</action>
+			</item>
+			<item label="digikam">
+				<action name="Execute">
+					<execute>digikam</execute>
+				</action>
+			</item>
 		</menu>
 		<!-- This requires the presence of the 'menu' package to work -->
 		<menu id="/Debian"/>
