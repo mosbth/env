@@ -14,8 +14,6 @@ backup:
 	sudo rsync $(OPTS) dbwebb-kurser $(TO)
 	sudo rsync $(OPTS) htdocs $(TO)
 	sudo rsync $(OPTS) customer $(TO)
-	#etc/apache, aptlists
-	#
 
 
 
@@ -24,4 +22,8 @@ backup:
 #
 .PHONY: dbwebb-backup
 dbwebb-backup:
-	rsync -av -e "ssh" dbwebb.se:htdocs/cc1.dbwebb.se/backup/ $(HOME)/git/dbwebb.se/backup/
+	cd $(HOME)/git/dbwebb.se
+	rsync -av -e "ssh" dbwebb.se:htdocs/cc1.dbwebb.se/backup/ backup/
+	cd $(HOME)/git
+	rsync -av -e "ssh" dbwebb.se:git/irssistats/ irssistats/
+
