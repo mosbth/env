@@ -35,5 +35,6 @@ libxml2-utils
 libyaml-dev
 #  linux-libc-dev needed?
 # sudo pecl install yaml-1.2.0
+xclip
 
 
