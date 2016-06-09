@@ -1,0 +1,12 @@
+#
+# pngout
+# http://www.jonof.id.au/kenutils
+#
+url=http://static.jonof.id.au/dl/kenutils/pngout-20150319-linux.tar.gz
+target=pngout-20150319-linux
+wget $url -O- | tar -zx
+sudo install --mode 755 $target/x86_64/pngout /usr/local/bin
+rm -rf $target
+
+# pecl install yaml 
+sudo pecl install yaml-1.2.0
