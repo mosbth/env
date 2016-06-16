@@ -1,3 +1,5 @@
+ntp
+firmware-linux-nonfree
 exim4-daemon-heavy
 python-pip
 vim
@@ -36,5 +38,3 @@ libyaml-dev
 #  linux-libc-dev needed?
 # sudo pecl install yaml-1.2.0
 xclip
-
-
