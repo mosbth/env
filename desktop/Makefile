@@ -5,6 +5,12 @@
 #
 OPTS := -a --delete
 TO := hosts/desktop
+DBWEBB  := hosts/dbwebb
+MEGAMIC := hosts/megamic.se
+
+all: backup-dbwebb backup-megamic backup
+
+
 
 .PHONY: backup
 backup:
@@ -14,16 +20,22 @@ backup:
 	sudo rsync $(OPTS) dbwebb-kurser $(TO)
 	sudo rsync $(OPTS) htdocs $(TO)
 	sudo rsync $(OPTS) customer $(TO)
+	sudo rsync $(OPTS) Pictures $(TO)
 
 
 
-#
+.PHONY: backup-megamic
+backup-megamic:
+	# From megamic.se
+	rsync $(OPTS) -e "ssh" megamic.se:irclogs $(MEGAMIC)
+
+
+
 # Backup database from dbwebb.se
-#
-.PHONY: dbwebb-backup
-dbwebb-backup:
+.PHONY: backup-dbwebb
+backup-dbwebb:
 	cd $(HOME)/git/dbwebb.se
-	rsync -av -e "ssh" dbwebb.se:htdocs/cc1.dbwebb.se/backup/ backup/
+	rsync -av -e "ssh" dbwebb.se:htdocs/cc1.dbwebb.se/backup $(DBWEBB)
 	cd $(HOME)/git
-	rsync -av -e "ssh" dbwebb.se:git/irssistats/ irssistats/
-
+	rsync $(OPTS) -v -e "ssh" dbwebb.se:git/irssistats $(DBWEBB)
+	rsync $(OPTS) -v -e "ssh" dbwebb.se:irclogs $(DBWEBB)
