@@ -18,6 +18,7 @@ php5-xdebug
 php5-xsl                
 php5-imagick
 libwebp-dev
+webp
 pkg-php-tools           
 apache2              
 libapache2-mod-dnssd
