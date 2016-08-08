@@ -17,6 +17,7 @@ php5-sqlite
 php5-xdebug             
 php5-xsl                
 php5-imagick
+libwebp-dev
 pkg-php-tools           
 apache2              
 libapache2-mod-dnssd
