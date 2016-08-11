@@ -4,11 +4,12 @@
 # Backup local files on desktop
 #
 OPTS := -a --delete
-TO := hosts/desktop
-DBWEBB  := hosts/dbwebb
-MEGAMIC := hosts/megamic.se
+TO 			:= hosts/desktop
+DBWEBB  	:= hosts/dbwebb
+DBWEBB_OLD  := hosts/dbwebb-old
+MEGAMIC 	:= hosts/megamic.se
 
-all: backup-dbwebb backup-megamic backup
+all: backup-dbwebb backup-old-dbwebb backup-megamic backup
 
 
 
@@ -34,8 +35,19 @@ backup-megamic:
 # Backup database from dbwebb.se
 .PHONY: backup-dbwebb
 backup-dbwebb:
-	cd $(HOME)/git/dbwebb.se
-	rsync -av -e "ssh" dbwebb.se:htdocs/cc1.dbwebb.se/backup $(DBWEBB)
+	cd $(HOME)/git/v2.dbwebb.se
+	rsync -av -e "ssh -p 2222" dbwebb.se:git/dbwebb.se/backup $(DBWEBB)
 	cd $(HOME)/git
-	rsync $(OPTS) -v -e "ssh" dbwebb.se:git/irssistats $(DBWEBB)
-	rsync $(OPTS) -v -e "ssh" dbwebb.se:irclogs $(DBWEBB)
+	rsync $(OPTS) -v -e "ssh -p 2222" dbwebb.se:git/irssistats $(DBWEBB)
+	rsync $(OPTS) -v -e "ssh -p 2222" dbwebb.se:irclogs $(DBWEBB)
+
+
+
+# Backup database from cc1.dbwebb.se
+.PHONY: backup-old-dbwebb
+backup-old-dbwebb:
+	cd $(HOME)/git/dbwebb.se
+	rsync -av -e "ssh" cc1.dbwebb.se:htdocs/cc1.dbwebb.se/backup $(DBWEBB)
+	cd $(HOME)/git
+	rsync $(OPTS) -v -e "ssh" cc1.dbwebb.se:git/irssistats $(DBWEBB)
+	rsync $(OPTS) -v -e "ssh" cc1.dbwebb.se:irclogs $(DBWEBB)

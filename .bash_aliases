@@ -24,7 +24,7 @@ alias s="sudo"
 alias rs='rsync -a -e "ssh"'
 alias rsv='rsync -av -e "ssh"'
 alias rs2='rsync -a -e "ssh -p 2222"'
-alias rsv2='rsync -a -e "ssh -p 2222"'
+alias rsv2='rsync -av -e "ssh -p 2222"'
 
 # ssh login
 alias ssh-cc1="ssh mos@cc1.dbwebb.se"

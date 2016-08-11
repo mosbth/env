@@ -33,6 +33,7 @@ npm
 dnsutils
 lynx
 optipng
+pngquant
 libjpeg-progs
 curl
 libxml2-utils
