@@ -76,7 +76,7 @@ function fecr
     do
         cd $dir
         echo ">>> $dir"
-        $@
+        "$@"
         cd ..
     done
 }
