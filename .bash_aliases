@@ -70,7 +70,16 @@ alias dw='dbwebb'
 alias dwv='dbwebb-validate'
 
 # Course repos
-alias fecr='for dir in htmlphp python design javascript1 linux oopython webapp oophp phpmvc javascript webgl; do'
+function fecr
+{
+    for dir in htmlphp python design javascript1 linux oopython webapp oophp phpmvc javascript webgl
+    do
+        cd $dir
+        echo ">>> $dir"
+        $@
+        cd ..
+    done
+}
 
 # Make
 alias mlp='make local-publish'
