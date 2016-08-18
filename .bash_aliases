@@ -74,10 +74,15 @@ function fecr
 {
     for dir in htmlphp python design javascript1 linux oopython webapp oophp phpmvc javascript webgl
     do
-        cd $dir
-        echo ">>> $dir"
-        "$@"
-        cd ..
+        if [ -d $dir ]; then
+            cd $dir
+            echo ">>> $dir"
+            eval $@
+            cd ..
+        else
+            echo "No such dir $dir"
+            exit 0
+        fi
     done
 }
 
