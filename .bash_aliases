@@ -69,6 +69,17 @@ alias gsu='git submodule update --init --recursive'
 alias dw='dbwebb'
 alias dwv='dbwebb-validate'
 
+# Course repos
+alias fecr='for dir in htmlphp python design javascript1 linux oopython webapp oophp phpmvc javascript webgl; do'
+
+# Make
+alias mlp='make local-publish'
+alias mlpc='make local-publish-clear'
+
+# Service Apache
+alias sar='service apache2 reload'
+alias sarestart='service apache2 restart'
+
 # Atom
 alias apm-deinstall-all="apm deinstall \$( ls $HOME/.atom/packages/ )"
 alias apm-install-all="apm install linter linter-less linter-pylint linter-jscs linter-phpcs block-travel linter-jshint linter-phpmd linter-csslint linter-pep8 linter-shellcheck linter-htmlhint linter-php linter-xmllint remote-edit"
