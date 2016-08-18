@@ -77,8 +77,8 @@ alias mlp='make local-publish'
 alias mlpc='make local-publish-clear'
 
 # Service Apache
-alias sar='service apache2 reload'
-alias sarestart='service apache2 restart'
+alias sar='sudo service apache2 reload'
+alias sarestart='sudo service apache2 restart'
 
 # Atom
 alias apm-deinstall-all="apm deinstall \$( ls $HOME/.atom/packages/ )"
