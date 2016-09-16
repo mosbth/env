@@ -13,6 +13,12 @@ install:
 		rsync -av bin/ $(HOME)/bin/
 		install desktop/Makefile $(HOME)
 
+install-mac:
+		install $(FILES) ~
+		rsync -av .vim ~
+		rsync -av .atom ~
+
+
 bashrc:
 		echo "source ~/.bashrc_my" >> ~/.bashrc
 
