@@ -40,6 +40,7 @@ backup-dbwebb:
 	cd $(HOME)/git
 	rsync $(OPTS) -v -e "ssh -p 2222" dbwebb.se:git/irssistats $(DBWEBB)
 	rsync $(OPTS) -v -e "ssh -p 2222" dbwebb.se:irclogs $(DBWEBB)
+	rsync $(OPTS) -v -e "ssh -p 2222" dbwebb.se:htdocs/uptime.dbwebb.se/data $(DBWEBB)
 
 
 
