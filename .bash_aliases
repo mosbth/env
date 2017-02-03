@@ -105,3 +105,6 @@ alias h="history"
 alias hg="history | grep"
 
 # Install
+
+# Other
+alias port='sudo netstat -nlp | grep'
