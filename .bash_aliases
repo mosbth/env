@@ -72,7 +72,7 @@ alias dwv='dbwebb-validate'
 # Course repos
 function fecr
 {
-    for dir in htmlphp python design javascript1 linux oopython webapp oophp phpmvc javascript webgl
+    for dir in htmlphp python design javascript1 linux oopython webapp oophp phpmvc javascript webgl dbjs
     do
         if [ -d $dir ]; then
             cd $dir
