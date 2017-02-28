@@ -83,6 +83,11 @@ k
 					<execute>digikam</execute>
 				</action>
 			</item>
+			<item label="Google earth">
+				<action name="Execute">
+					<execute>google-earth</execute>
+				</action>
+			</item>
 		</menu>
 		<!-- This requires the presence of the 'menu' package to work -->
 		<menu id="/Debian"/>
