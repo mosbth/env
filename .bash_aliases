@@ -108,3 +108,8 @@ alias hg="history | grep"
 
 # Other
 alias port='sudo netstat -nlp | grep'
+
+# Python
+alias activate=". .venv/bin/activate"
+PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
+[ -d "$PIP_DOWNLOAD_CACHE" ] || mkdir "$PIP_DOWNLOAD_CACHE"
