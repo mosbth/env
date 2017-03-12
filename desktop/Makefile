@@ -1,54 +1,119 @@
 #!/usr/bin/make -f
 
+# ---------------------------------------------------------------------------
 #
+# General setup
+#
+
+# Detect OS
+OS = $(shell uname -s)
+
+# Defaults
+ECHO = echo
+
+# Make adjustments based on OS
+ifneq (, $(findstring CYGWIN, $(OS)))
+	ECHO = /bin/echo -e
+endif
+
+# Colors and helptext
+NO_COLOR	= \033[0m
+ACTION		= \033[32;01m
+OK_COLOR	= \033[32;01m
+ERROR_COLOR	= \033[31;01m
+WARN_COLOR	= \033[33;01m
+
+# Which makefile am I in?
+WHERE-AM-I = $(CURDIR)/$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
+THIS_MAKEFILE := $(call WHERE-AM-I)
+
+# Echo some nice helptext based on the target comment
+HELPTEXT = $(ECHO) "$(ACTION)--->" `egrep "^\# target: $(1) " $(THIS_MAKEFILE) | sed "s/\# target: $(1)[ ]*-[ ]* / /g"` "$(NO_COLOR)"
+
+
+
+# target: help                    - Displays help with targets available.
+.PHONY:  help
+help:
+	@$(call HELPTEXT,$@)
+	@echo "Usage:"
+	@echo " make [target] ..."
+	@echo "target:"
+	@egrep "^# target:" Makefile | sed 's/# target: / /g'
+
+
+
+# ---------------------------------------------------------------------------
+#
+# Specifics
+# 
+
 # Backup local files on desktop
-#
-OPTS := -a --delete
-TO 			:= hosts/desktop
+OPTS 		:= -a --delete
+DESKTOP 	:= hosts/desktop
 DBWEBB  	:= hosts/dbwebb
-DBWEBB_OLD  := hosts/dbwebb-old
 MEGAMIC 	:= hosts/megamic.se
-
-all: backup-dbwebb backup-old-dbwebb backup-megamic backup
-
+SHARE4 		:= /mnt/megamic/share4/desktop
 
 
-.PHONY: backup
-backup:
+
+# target: backup-daily            - Daily backup.
+.PHONY: backup-daily
+backup-daily: backup-dbwebb backup-megamic backup-desktop
+	@$(call HELPTEXT,$@)
+
+
+
+# target: backup-weekly           - Weekly backup.
+.PHONY: backup-weekly
+backup-weekly: backup-share4
+	@$(call HELPTEXT,$@)
+
+
+
+# target: backup-desktop          - Backup of all desktop items.
+.PHONY: backup-desktop
+backup-desktop:
+	@$(call HELPTEXT,$@)
 	cd $(HOME)
-	install -d $(TO)
-	sudo rsync $(OPTS) git $(TO)
-	sudo rsync $(OPTS) dbwebb-kurser $(TO)
-	sudo rsync $(OPTS) htdocs $(TO)
-	sudo rsync $(OPTS) customer $(TO)
-	sudo rsync $(OPTS) Pictures $(TO)
+	install -d $(DESKTOP)
+	sudo rsync $(OPTS) --exclude git/working git $(DESKTOP)
+	sudo rsync $(OPTS) dbwebb-kurser $(DESKTOP)
+	sudo rsync $(OPTS) htdocs $(DESKTOP)
+	sudo rsync $(OPTS) customer $(DESKTOP)
+	sudo rsync $(OPTS) Pictures $(DESKTOP)
 
 
 
+# target: backup-megamic          - Backup of megamic.se.
 .PHONY: backup-megamic
 backup-megamic:
-	# From megamic.se
+	@$(call HELPTEXT,$@)
+	install -d $(MEGAMIC)
 	rsync $(OPTS) -e "ssh" megamic.se:irclogs $(MEGAMIC)
 
 
 
-# Backup database from dbwebb.se
+# target: backup-dbwebb           - Backup of dbwebb.se.
 .PHONY: backup-dbwebb
 backup-dbwebb:
+	@$(call HELPTEXT,$@)
+	install -d $(DBWEBB)
 	cd $(HOME)/git/v2.dbwebb.se
-	rsync -av -e "ssh -p 2222" dbwebb.se:git/dbwebb.se/backup $(DBWEBB)
+	rsync -a -e "ssh -p 2222" dbwebb.se:git/dbwebb.se/backup $(DBWEBB)
 	cd $(HOME)/git
-	rsync $(OPTS) -v -e "ssh -p 2222" dbwebb.se:git/irssistats $(DBWEBB)
-	rsync $(OPTS) -v -e "ssh -p 2222" dbwebb.se:irclogs $(DBWEBB)
-	rsync $(OPTS) -v -e "ssh -p 2222" dbwebb.se:htdocs/uptime.dbwebb.se/data $(DBWEBB)
+	rsync $(OPTS) -e "ssh -p 2222" dbwebb.se:git/irssistats $(DBWEBB)
+	rsync $(OPTS) -e "ssh -p 2222" dbwebb.se:irclogs $(DBWEBB)
+	rsync $(OPTS) -e "ssh -p 2222" dbwebb.se:htdocs/uptime.dbwebb.se/data $(DBWEBB)
 
 
 
-# Backup database from cc1.dbwebb.se
-.PHONY: backup-old-dbwebb
-backup-old-dbwebb:
-	cd $(HOME)/git/dbwebb.se
-	rsync -av -e "ssh" cc1.dbwebb.se:htdocs/cc1.dbwebb.se/backup $(DBWEBB)
-	cd $(HOME)/git
-	rsync $(OPTS) -v -e "ssh" cc1.dbwebb.se:git/irssistats $(DBWEBB)
-	rsync $(OPTS) -v -e "ssh" cc1.dbwebb.se:irclogs $(DBWEBB)
+# target: backup-share4           - Backup parts of desktop/hosts to share4/desktop.
+.PHONY: backup-share4
+backup-share4:
+	@$(call HELPTEXT,$@)
+	install -d $(SHARE4)
+	rsync $(OPTS) hosts/dbwebb $(SHARE4)
+	rsync $(OPTS) hosts/megamic.se $(SHARE4)
+	rsync $(OPTS) hosts/desktop $(SHARE4)
+	rsync $(OPTS) hosts/tomato $(SHARE4)
