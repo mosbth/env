@@ -54,6 +54,7 @@ DESKTOP 	:= hosts/desktop
 DBWEBB  	:= hosts/dbwebb
 MEGAMIC 	:= hosts/megamic.se
 SHARE4 		:= /mnt/megamic/share4/desktop
+SHARE 		:= /mnt/megamic/share
 
 
 
@@ -117,3 +118,11 @@ backup-share4:
 	rsync $(OPTS) hosts/megamic.se $(SHARE4)
 	rsync $(OPTS) hosts/desktop $(SHARE4)
 	rsync $(OPTS) hosts/tomato $(SHARE4)
+
+
+
+# target: backup-share            - Backup parts of desktop to share.
+.PHONY: backup-share
+backup-share:
+	@$(call HELPTEXT,$@)
+	rsync $(OPTS) Pictures/photo $(SHARE)
