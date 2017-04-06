@@ -7,7 +7,7 @@ PS1_ALT="\[$green\]\w\n$\[$reset\] "
 export LC_CTYPE="C.UTF-8"
 
 export PATH="${PATH}:/usr/local/sbin:/sbin:/usr/sbin"
-export PATH="bin/:vendor/bin:node_modules/.bin:$HOME/.composer/vendor/bin:$HOME/.npm-packages/bin:$PATH"
+export PATH="bin/:vendor/bin:node_modules/.bin:$HOME/.composer/vendor/bin:$HOME/.npm-packages/bin:$HOME/bin:$PATH"
 
 export EDITOR="vim"
 

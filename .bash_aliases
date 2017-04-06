@@ -16,7 +16,6 @@ alias ....="cd ..; cd ..; cd ..;"
 alias .....="cd ..; cd ..; cd ..; cd ..;"
 
 # Useful
-alias grep='grep --color=auto'
 alias psg="ps -aux | grep "
 alias s="sudo"
 
@@ -37,18 +36,9 @@ alias ssh-stud="ssh mosstud@ssh.student.bth.se"
 alias ssh-bth-pi="ssh mos@mospi1.clab.bth.se -p 2222"
 alias ssh-bth1="ssh mos@dbwebb.tekproj.bth.se -p 2222"
 
-# sshfs
-# -oauto_cache,reconnect,Ciphers=arcfour
-alias sshfs-www2.sifero.se='sshfs -o idmap=user mos@www2.sifero.se:/home/mos /home/mos/mnt/www2.sifero.se/'
-alias sshfs-dbwebb.se='sshfs -oauto_cache,reconnect,Ciphers=arcfour,port=2222,idmap=user mos@dbwebb.se:/home/mos /home/mos/mnt/dbwebb.se/'
-alias sshfs-stud='sshfs -o port=22 -o idmap=user mosstud@ssh.student.bth.se:/home/saxon/teachers/com/mosstud /home/mos/mnt/ssh.student.bth.se/'
-alias sshfs-stud-all='sshfs -o port=22 -o idmap=user mosstud@ssh.student.bth.se:/home/saxon/students /home/mos/mnt/ssh.student.bth.se-students/'
-
 # tmux
-alias tmux_basic_start='tmux new-session -s basic'
-alias tmux_basic='tmux attach -t basic'
-alias tbs=tmux_basic_start
-alias tb=tmux_basic
+alias tbs='tmux new-session -s basic'
+alias tb='tmux attach -t basic'
 
 # Git
 alias gpl='git pull'
@@ -59,6 +49,7 @@ alias gs='git status'
 alias ga='git add'
 alias gh='git hist'
 alias gb='git branch'
+alias gt='git tag'
 alias gsd='git stash show -p stash@{0}'
 alias gf='git fetch'
 alias gfu='git fetch upstream'
@@ -93,10 +84,6 @@ alias mlpc='make local-publish-clear'
 # Service Apache
 alias sar='sudo service apache2 reload'
 alias sarestart='sudo service apache2 restart'
-
-# Atom
-alias apm-deinstall-all="apm deinstall \$( ls $HOME/.atom/packages/ )"
-alias apm-install-all="apm install linter linter-less linter-pylint linter-jscs linter-phpcs block-travel linter-jshint linter-phpmd linter-csslint linter-pep8 linter-shellcheck linter-htmlhint linter-php linter-xmllint remote-edit"
 
 # History
 export HISTFILESIZE=
