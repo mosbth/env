@@ -17,6 +17,47 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 '.source.gfm':
-  '[FIGURE]':
-    'prefix': 'FIG'
-    'body': '[FIGURE src=image/$1 caption="$2"]'
+    'h1':
+        'prefix': 'h1'
+        'body': '''$1 {#$2}
+=========================================
+
+$3
+
+
+
+'''
+    'h2':
+        'prefix': 'h2'
+        'body': '''$1 {#$2}
+-----------------------------------------
+
+$3
+
+
+
+'''
+    'h3':
+        'prefix': 'h3'
+        'body': '''###$1 {#$2}
+
+$3
+
+
+
+'''
+    '[INFO]':
+        'prefix': 'INFO'
+        'body': '''[INFO]
+$1
+[/INFO]
+'''
+    '[WARNING]':
+        'prefix': 'WARNING'
+        'body': '''[WARNING]
+$1
+[/WARNING]
+'''
+    '[FIGURE]':
+        'prefix': 'FIG'
+        'body': '[FIGURE src=image/$1 caption="$2"]'
