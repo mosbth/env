@@ -1,1 +1,3 @@
-linter
+atom-terminal-panel
+linter-phpcs
+linter-phpmd
