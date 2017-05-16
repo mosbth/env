@@ -88,6 +88,16 @@ k
 					<execute>google-earth</execute>
 				</action>
 			</item>
+			<item label="Inkscape">
+				<action name="Execute">
+					<execute>inkscape</execute>
+				</action>
+			</item>
+			<item label="Pencil">
+				<action name="Execute">
+					<execute>pencil</execute>
+				</action>
+			</item>
 		</menu>
 		<!-- This requires the presence of the 'menu' package to work -->
 		<menu id="/Debian"/>
