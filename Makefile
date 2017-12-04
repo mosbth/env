@@ -1,35 +1,122 @@
+#!/usr/bin/make -f
+
+# ---------------------------------------------------------------------------
 #
+# General setup
 #
-FILES = .bash_aliases .bashrc_my .tmux.conf .vimrc .gitconfig
-DIRS = .vim
 
-.PHONY: install bashrc aliases
+# Detect OS
+OS = $(shell uname -s)
 
-install:
-		install $(FILES) ~
-		rsync -av .vim ~
-		#rsync -av .atom ~
-		rsync -av .config ~
-		rsync -av bin/ $(HOME)/bin/
-		install desktop/Makefile $(HOME)
+# Defaults
+ECHO = echo
 
-install-mac:
-		install $(FILES) ~
-		rsync -av .vim ~
-		rsync -av .atom ~
+# Make adjustments based on OS
+ifneq (, $(findstring CYGWIN, $(OS)))
+	ECHO = /bin/echo -e
+endif
 
-profile:
-		touch ~/.profile
-		echo "source ~/.bashrc_my" >> ~/.profile
-		echo "source ~/.bash_aliases" >> ~/.profile
+# Colors and helptext
+NO_COLOR	= \033[0m
+ACTION		= \033[32;01m
+OK_COLOR	= \033[32;01m
+ERROR_COLOR	= \033[31;01m
+WARN_COLOR	= \033[33;01m
 
-bashrc:
-		echo "source ~/.bashrc_my" >> ~/.bashrc
+# Which makefile am I in?
+WHERE-AM-I = $(CURDIR)/$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
+THIS_MAKEFILE := $(call WHERE-AM-I)
 
-aliases:
-		echo "source ~/.bash_aliases" >> ~/.bashrc
+# Echo some nice helptext based on the target comment
+HELPTEXT = $(ECHO) "$(ACTION)--->" `egrep "^\# target: $(1) " $(THIS_MAKEFILE) | sed "s/\# target: $(1)[ ]*-[ ]* / /g"` "$(NO_COLOR)"
 
 
-# Atom
-#alias apm-deinstall-all="apm deinstall \$( ls $HOME/.atom/packages/ )"
-#alias apm-install-all="apm install linter linter-less linter-pylint linter-jscs linter-phpcs linter-jshint linter-phpmd linter-csslint linter-pep8 linter-shellcheck linter-htmlhint linter-php linter-xmllint remote-edit"
+
+# target: help                    - Displays help with targets available.
+.PHONY:  help
+help:
+	@$(call HELPTEXT,$@)
+	@echo "Usage:"
+	@echo " make [target] ..."
+	@echo "target:"
+	@egrep "^# target:" Makefile | sed 's/# target: / /g'
+
+
+
+# ---------------------------------------------------------------------------
+#
+# Specifics
+# 
+
+# Backup local files on desktop
+OPTS 	:= -a --delete
+HOST  	:= hosts/server
+SHARE   := share
+
+
+
+# target: backup-pre              - Run before any backup is made.
+.PHONY: backup-pre
+backup-pre:
+	@$(call HELPTEXT,$@)
+	@date
+	install -d log
+
+
+
+# target: backup-post             - Run after any backup is made.
+.PHONY: backup-post
+backup-post:
+	@$(call HELPTEXT,$@)
+	@date
+
+
+
+# target: backup-daily            - Daily backup.
+.PHONY: backup-daily
+backup-daily: backup-pre backup-server backup-share-to-local backup-post
+	@$(call HELPTEXT,$@)
+
+
+
+# target: backup-weekly           - Weekly backup.
+.PHONY: backup-weekly
+backup-weekly: backup-pre backup-post
+	@$(call HELPTEXT,$@)
+
+
+
+# target: backup-monthly          - Monthly backup.
+.PHONY: backup-monthly
+backup-monthly: backup-pre backup-post
+	@$(call HELPTEXT,$@)
+
+
+
+# target: backup-host             - Backup of local host.
+.PHONY: backup-host
+backup-host:
+	@$(call HELPTEXT,$@)
+	cd $(HOME)
+	install -d $(HOST)/etc
+	cp /etc/fstab   $(HOST)/etc
+	cp /etc/exports $(HOST)/etc
+	crontab -l    > $(HOST)/crontab
+	rsync $(OPTS) $(HOST) $(SHARE)/hosts
+
+
+
+# target: backup-share-to-local   - Backup share/ to local host.
+.PHONY: backup-share-to-local
+backup-share-to-local:
+	@$(call HELPTEXT,$@)
+	rsync $(OPTS) share/ share_backup/
+
+
+
+# target: backup-share-to-backup  - Backup share/ to primary backup disc.
+.PHONY: backup-share-to-backup
+backup-share-to-backup:
+	@$(call HELPTEXT,$@)
+	rsync $(OPTS) share/ backup/share/
+
