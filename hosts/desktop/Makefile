@@ -47,7 +47,10 @@ help:
 #
 # Specifics
 # 
-OPTS 	 := -a --delete
+OPTS 		:= -a --delete
+OPTS_VFAT 	:= $(OPTS) --modify-window=1 --no-perms --no-links
+EXCL_MAC  	:= --exclude .DS_Store --exclude ._.DS_Store --exclude .AppleDouble
+
 HOST	 = $(shell hostname)
 LOCAL  	:= hosts/$(HOST)
 ARCHIVE := hosts/arkiv
@@ -139,7 +142,7 @@ backup-hosts-daily: backup-local backup-dbwebb
 
 # target: backup-hosts-weekly     - Backup weekly hosts to local disc.
 .PHONY: backup-hosts-weekly
-backup-hosts-weekly:
+backup-hosts-weekly: backup-usb
 	@$(call HELPTEXT,$@)
 
 
@@ -162,3 +165,16 @@ backup-dbwebb:
 	rsync $(OPTS) -e "ssh -p 2222" dbwebb.se:git/irssistats $(DBWEBB)
 	rsync $(OPTS) -e "ssh -p 2222" dbwebb.se:irclogs $(DBWEBB)
 	rsync $(OPTS) -e "ssh -p 2222" dbwebb.se:htdocs/uptime.dbwebb.se/data $(DBWEBB)
+
+
+
+# target: backup-usb              - Backup to USB disk.
+.PHONY: backup-usb
+backup-usb:
+	@$(call HELPTEXT,$@)
+	rsync $(OPTS_VFAT) $(EXCL_MAC) share/books usb
+	rsync $(OPTS_VFAT) $(EXCL_MAC) share/home usb
+	rsync $(OPTS_VFAT) $(EXCL_MAC) share/movies usb
+	rsync $(OPTS_VFAT) $(EXCL_MAC) share/musikvideo usb
+	rsync $(OPTS_VFAT) $(EXCL_MAC) share/photo usb
+	rsync $(OPTS_VFAT) $(EXCL_MAC) share/videokamera usb

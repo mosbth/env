@@ -47,7 +47,10 @@ help:
 #
 # Specifics
 # 
-OPTS 	:= -a --delete
+OPTS 		:= -a --delete
+OPTS_VFAT 	:= $(OPTS) --modify-window=1 --no-perms --no-links
+EXCL_MAC  	:= --exclude .DS_Store --exclude ._.DS_Store --exclude .AppleDouble
+
 HOST	 = $(shell hostname)
 LOCAL  	:= hosts/$(HOST)
 
