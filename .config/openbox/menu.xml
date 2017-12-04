@@ -7,6 +7,11 @@ k
 				<execute>lxterminal</execute>
 			</action>
 		</item>
+		<item label="Terminal emulator 2">
+			<action name="Execute">
+				<execute>uxterm</execute>
+			</action>
+		</item>
 		<item label="Google Chrome">
 			<action name="Execute">
 				<execute>google-chrome</execute>
