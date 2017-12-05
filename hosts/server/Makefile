@@ -49,7 +49,7 @@ help:
 # 
 OPTS 		:= -a --delete
 OPTS_VFAT 	:= $(OPTS) --modify-window=1 --no-perms --no-links
-EXCL_MAC  	:= --exclude .DS_Store --exclude ._.DS_Store --exclude .AppleDouble
+EXCL_MAC  	:= --exclude .DS_Store --exclude ._.DS_Store --exclude .AppleDouble --exclude .Trash-1000
 
 HOST	 = $(shell hostname)
 LOCAL  	:= hosts/$(HOST)
@@ -83,7 +83,7 @@ backup-post:
 .PHONY: backup-daily
 backup-daily: backup-pre backup-hosts-daily backup-post
 	@$(call HELPTEXT,$@)
-	@date > $(LOCAL)/log/$@
+	@date > $(LOCAL)/log/$@.ts
 
 
 
@@ -91,7 +91,7 @@ backup-daily: backup-pre backup-hosts-daily backup-post
 .PHONY: backup-weekly
 backup-weekly: backup-pre backup-hosts-weekly backup-post
 	@$(call HELPTEXT,$@)
-	@date > $(LOCAL)/log/$@
+	@date > $(LOCAL)/log/$@.ts
 
 
 
@@ -99,7 +99,7 @@ backup-weekly: backup-pre backup-hosts-weekly backup-post
 .PHONY: backup-monthly
 backup-monthly: backup-pre backup-hosts-monthly backup-post
 	@$(call HELPTEXT,$@)
-	@date > $(LOCAL)/log/$@
+	@date > $(LOCAL)/log/$@.ts
 
 
 
@@ -128,10 +128,10 @@ backup-local:
 .PHONY: backup-hosts-daily
 backup-hosts-daily: backup-local
 	@$(call HELPTEXT,$@)
-	rsync $(OPTS) share/ share_backup/
+	rsync $(OPTS) --exclude to-be-removed/ share/ share_backup/
 
-	rsync $(OPTS) -e "ssh -i backup_rsa" pi:hosts/pi hosts
-	rsync $(OPTS) -e "ssh -i backup_rsa" desktop:hosts/desktop hosts
+	rsync $(OPTS) -e "ssh -i .ssh/backup_rsa" pi:hosts/pi hosts
+	rsync $(OPTS) -e "ssh -i .ssh/backup_rsa" desktop:hosts/desktop hosts
 
 
 
@@ -139,11 +139,10 @@ backup-hosts-daily: backup-local
 .PHONY: backup-hosts-weekly
 backup-hosts-weekly:
 	@$(call HELPTEXT,$@)
-	rsync $(OPTS) -e "ssh -i backup_rsa" desktop:hosts/tomato hosts
-	rsync $(OPTS) -e "ssh -i backup_rsa" desktop:hosts/dbwebb.se hosts
-	rsync $(OPTS) -e "ssh -i backup_rsa" desktop:hosts/arkiv/ hosts/desktop-arkiv/
+	rsync $(OPTS) -e "ssh -i .ssh/backup_rsa" desktop:hosts/tomato hosts
+	rsync $(OPTS) -e "ssh -i .ssh/backup_rsa" desktop:hosts/dbwebb.se hosts
 
-	rsync $(OPTS) share backup
+	rsync $(OPTS) --exclude to-be-removed/ share backup
 	rsync $(OPTS) hosts backup
 
 

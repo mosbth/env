@@ -49,7 +49,7 @@ help:
 # 
 OPTS 		:= -a --delete
 OPTS_VFAT 	:= $(OPTS) --modify-window=1 --no-perms --no-links
-EXCL_MAC  	:= --exclude .DS_Store --exclude ._.DS_Store --exclude .AppleDouble
+EXCL_MAC  	:= --exclude .DS_Store --exclude ._.DS_Store --exclude .AppleDouble --exclude .Trash-1000
 
 HOST	 = $(shell hostname)
 LOCAL  	:= hosts/$(HOST)
@@ -84,7 +84,7 @@ backup-post:
 .PHONY: backup-daily
 backup-daily: backup-pre backup-hosts-daily backup-post
 	@$(call HELPTEXT,$@)
-	@date > $(LOCAL)/log/$@
+	@date > $(LOCAL)/log/$@.ts
 
 
 
@@ -92,7 +92,7 @@ backup-daily: backup-pre backup-hosts-daily backup-post
 .PHONY: backup-weekly
 backup-weekly: backup-pre backup-hosts-weekly backup-post
 	@$(call HELPTEXT,$@)
-	@date > $(LOCAL)/log/$@
+	@date > $(LOCAL)/log/$@.ts
 
 
 
@@ -100,7 +100,7 @@ backup-weekly: backup-pre backup-hosts-weekly backup-post
 .PHONY: backup-monthly
 backup-monthly: backup-pre backup-hosts-monthly backup-post
 	@$(call HELPTEXT,$@)
-	@date > $(LOCAL)/log/$@
+	@date > $(LOCAL)/log/$@.ts
 
 
 

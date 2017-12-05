@@ -48,8 +48,9 @@ help:
 # Specifics
 # 
 OPTS 		:= -a --delete
-OPTS_VFAT 	:= $(OPTS) --modify-window=1 --no-perms --no-links
-EXCL_MAC  	:= --exclude .DS_Store --exclude ._.DS_Store --exclude .AppleDouble
+OPTS_VFAT 	:= -rtD --delete --modify-window=1 \
+	--exclude .svn
+EXCL_MAC  	:= --exclude .DS_Store --exclude ._.DS_Store --exclude .AppleDouble --exclude .Trash-1000 --exclude '.Icon*' --exclude '*.key' --exclude ':2e*'
 
 HOST	 = $(shell hostname)
 LOCAL  	:= hosts/$(HOST)
@@ -85,7 +86,7 @@ backup-post:
 .PHONY: backup-daily
 backup-daily: backup-pre backup-hosts-daily backup-post
 	@$(call HELPTEXT,$@)
-	@date > $(LOCAL)/log/$@
+	@date > $(LOCAL)/log/$@.ts
 
 
 
@@ -93,7 +94,7 @@ backup-daily: backup-pre backup-hosts-daily backup-post
 .PHONY: backup-weekly
 backup-weekly: backup-pre backup-hosts-weekly backup-post
 	@$(call HELPTEXT,$@)
-	@date > $(LOCAL)/log/$@
+	@date > $(LOCAL)/log/$@.ts
 
 
 
@@ -101,7 +102,7 @@ backup-weekly: backup-pre backup-hosts-weekly backup-post
 .PHONY: backup-monthly
 backup-monthly: backup-pre backup-hosts-monthly backup-post
 	@$(call HELPTEXT,$@)
-	@date > $(LOCAL)/log/$@
+	@date > $(LOCAL)/log/$@.ts
 
 
 
@@ -130,11 +131,12 @@ backup-local:
 .PHONY: backup-hosts-daily
 backup-hosts-daily: backup-local backup-dbwebb
 	@$(call HELPTEXT,$@)
-	rsync $(OPTS)                  \
-		--exclude vendor           \
-		--exclude node_modules     \
-		--exclude .env             \
-		--exclude .bin             \
+	rsync $(OPTS) --delete-excluded   \
+		--exclude vendor              \
+		--exclude node_modules        \
+		--exclude .env                \
+		--exclude .bin                \
+		--exclude mongodb/data/db     \
 		git $(ARCHIVE)
 	sudo rsync $(OPTS) htdocs $(ARCHIVE)
 
@@ -142,8 +144,15 @@ backup-hosts-daily: backup-local backup-dbwebb
 
 # target: backup-hosts-weekly     - Backup weekly hosts to local disc.
 .PHONY: backup-hosts-weekly
-backup-hosts-weekly: backup-usb
+backup-hosts-weekly: backup-usb-exfat
 	@$(call HELPTEXT,$@)
+	install -d backup/arkiv/desktop
+
+	# Local archive to extra backup
+	rsync $(OPTS) --exclude htdocs/ hosts/arkiv/ backup/arkiv/desktop/
+	sudo rsync $(OPTS) hosts/arkiv/htdocs backup/arkiv/desktop
+
+	rsync $(OPTS) Dropbox backup/arkiv
 
 
 
@@ -168,13 +177,13 @@ backup-dbwebb:
 
 
 
-# target: backup-usb              - Backup to USB disk.
-.PHONY: backup-usb
-backup-usb:
+# target: backup-usb-exfat        - Backup media to exfat USB disk for portability.
+.PHONY: backup-usb-exfat
+backup-usb-exfat:
 	@$(call HELPTEXT,$@)
-	rsync $(OPTS_VFAT) $(EXCL_MAC) share/books usb
-	rsync $(OPTS_VFAT) $(EXCL_MAC) share/home usb
-	rsync $(OPTS_VFAT) $(EXCL_MAC) share/movies usb
-	rsync $(OPTS_VFAT) $(EXCL_MAC) share/musikvideo usb
-	rsync $(OPTS_VFAT) $(EXCL_MAC) share/photo usb
-	rsync $(OPTS_VFAT) $(EXCL_MAC) share/videokamera usb
+	rsync $(OPTS_VFAT) $(EXCL_MAC) --delete-excluded share/books usb
+	#rsync $(OPTS_VFAT) $(EXCL_MAC) --delete-excluded share/home usb
+	rsync $(OPTS_VFAT) $(EXCL_MAC) --delete-excluded share/movies usb
+	rsync $(OPTS_VFAT) $(EXCL_MAC) --delete-excluded share/musikvideo usb
+	rsync $(OPTS_VFAT) $(EXCL_MAC) --delete-excluded share/photo usb
+	rsync $(OPTS_VFAT) $(EXCL_MAC) --delete-excluded share/videokamera usb
