@@ -103,6 +103,11 @@ k
 					<execute>pencil</execute>
 				</action>
 			</item>
+			<item label="Remmina (remote dektop)">
+				<action name="Execute">
+					<execute>remmina</execute>
+				</action>
+			</item>
 		</menu>
 		<!-- This requires the presence of the 'menu' package to work -->
 		<menu id="/Debian"/>
