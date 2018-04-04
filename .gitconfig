@@ -1,5 +1,5 @@
 [alias]
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  hist = log --all --decorate --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 
 [user]
 	name = Mikael Roos
