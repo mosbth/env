@@ -1,0 +1,17 @@
+# As root
+echo "mos ALL=NOPASSWD: ALL" > /etc/sudoers.d/mos
+su - mos
+
+# As mos 
+sudo apt-get update \
+      && sudo apt-get install git make
+  
+install -d $HOME/git \
+      && cd git \
+      && git clone git@github.com:mosbth/env.git \
+      && cd env \
+      && make install bashrc aliases
+
+cd install \
+    && make server7.2 composer manual
+    
