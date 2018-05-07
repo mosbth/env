@@ -15,3 +15,5 @@ install -d $HOME/git \
 cd install \
     && make server7.2 composer manual
     
+sudo dpkg-reconfigure tzdata
+
