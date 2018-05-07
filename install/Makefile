@@ -3,7 +3,7 @@
 .PHONY: server7.2 server pi composer desktop manual
 
 server7.2:
-	grep "^[^#;]" server7.3 | xargs sudo apt-get -y install
+	grep "^[^#;]" server7.2 | xargs sudo apt-get -y install
 
 server:
 	grep "^[^#;]" server | xargs sudo apt-get -y install
