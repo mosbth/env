@@ -29,7 +29,7 @@ k
 		</item>
 		<item label="Filemanager">
 			<action name="Execute">
-				<execute>pcmanfm</execute>
+				<execute>thunar</execute>
 			</action>
 		</item>
 		<menu id="Applications" label="Applications">
