@@ -1,0 +1,21 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda2 during installation
+UUID=4c7ecd25-d3f6-4ac1-96a4-5de6d565755c /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sda3 during installation
+UUID=6a2107ff-e56c-4bb3-9b1c-08aa66fb1f00 none            swap    sw              0       0
+/dev/sde1       /media/usb0     auto    rw,user,noauto  0       0
+# Added own disks
+UUID=4defe704d2a7c9f6	/mnt/4defe704d2a7c9f6	ufs	ro,ufstype=ufs2	0	0
+UUID=4defe7be7748da65	/mnt/4defe7be7748da65	ufs	ro,ufstype=ufs2	0	0
+UUID=6a914748-6b88-4fc0-be3d-76b7be76df54	/mnt/6a914748-6b88-4fc0-be3d-76b7be76df54	ext4	rw	0	0
+#/dev/sdd1		/mnt/sdd1		ufs	ro,ufstype=ufs2	0	0
+UUID=dd9725bd-7aa0-488c-a5b0-656072b88e4f	/mnt/dd9725bd-7aa0-488c-a5b0-656072b88e4f	ext2	rw	0	0
+UUID=6041bc28-3be4-4507-93e5-139304fdef02	/mnt/6041bc28-3be4-4507-93e5-139304fdef02	ext2	rw	0	0
+UUID=73807e8b-e96f-4e97-a32f-c6140310ccff	/mnt/73807e8b-e96f-4e97-a32f-c6140310ccff	ext4	rw	0	0
+
