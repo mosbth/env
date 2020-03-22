@@ -9,7 +9,7 @@ server:
 	grep "^[^#;]" server | xargs sudo apt-get -y install
 
 desktop:
-	grep "^[^#;]" desktop | xargs sudo apt-get -y install
+	grep "^[^#;]" desktop_2020 | xargs sudo apt-get -y install
 
 pi:
 	grep "^[^#;]" pi | xargs sudo apt-get -y install

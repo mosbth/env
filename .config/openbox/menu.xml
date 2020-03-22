@@ -29,10 +29,25 @@ k
 		</item>
 		<item label="Filemanager">
 			<action name="Execute">
-				<execute>thunar</execute>
+				<execute>pcmanfm</execute>
 			</action>
 		</item>
 		<menu id="Applications" label="Applications">
+			<item label="Krita (paint)">
+				<action name="Execute">
+					<execute>krita</execute>
+				</action>
+			</item>
+			<item label="Zoom">
+				<action name="Execute">
+					<execute>zoom</execute>
+				</action>
+			</item>
+			<item label="OBS Studio">
+				<action name="Execute">
+					<execute>obs</execute>
+				</action>
+			</item>
 			<item label="MySQL Workbench">
 				<action name="Execute">
 					<execute>mysql-workbench</execute>

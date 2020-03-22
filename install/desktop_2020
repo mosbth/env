@@ -1,0 +1,35 @@
+# Basics
+git
+make
+tree
+tmux
+vim
+openssh-server
+curl wget lynx
+
+# Openbox
+network-manager
+xorg openbox xdm
+obconf obmenu 
+# Filemanager
+pcmanfm 
+#Terminal 
+xterm lxterminal 
+# Screenshot
+#shutter
+# Screensaver
+# mkdir /usr/share/backgrounds
+xscreensaver xscreensaver-gl
+# Printing
+gtklp
+# Sound
+pavucontrol audacity
+# Extra
+krita gimp inkscape obs-studio firefox-esr spotify-client
+# Might need repofile
+skypeforlinux
+# Extra need specific
+# google-chrome
+# Extra not used
+#xbacklight pcmanfm lxappearance lxpanel gmrun gnome-terminal
+

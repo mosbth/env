@@ -1,3 +1,6 @@
+# new/used in 2020
+alias sc="scrot '%Y-%m-%d_%T_\$wx\$h.png' -e 'mv \$f ~/Pictures/Scrot; ls ~/Pictures/Scrot/\$f' -s"
+
 # ls
 alias ls="ls -Fh"
 alias la='ls -aFh'
