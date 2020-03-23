@@ -1,9 +1,5 @@
 127.0.0.1	localhost
-127.0.0.1 	dev.sjalskarlek.se anna avenir
-127.0.0.1	local.greenspire.se
-127.0.0.1	local.dianaebe.com
-127.0.0.1	local.sjalskarlek.se
-127.0.0.1   	local.dbwebb.se local.anderspbygg.se local.mikaelroos.se local.felixroos.se local.simonroos.se local.sifero.se local.wordpress.se
+127.0.0.1 local.dbwebb.se local.anderspbygg.se local.mikaelroos.se local.felixroos.se local.simonroos.se local.sifero.se local.wordpress.se
 127.0.0.1	wp-206889.mysql.binero.se
 
 # The following lines are desirable for IPv6 capable hosts
@@ -38,4 +34,3 @@ ff02::2 ip6-allrouters
 192.168.1.141 felix-mac
 192.168.1.141 felix-iphone
 192.168.1.141 felix-ipad
-
