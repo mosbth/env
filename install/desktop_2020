@@ -7,6 +7,9 @@ vim
 openssh-server
 curl wget lynx
 
+# Utilities
+lshw
+
 # Openbox
 network-manager
 xorg openbox xdm
