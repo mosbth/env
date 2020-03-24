@@ -59,6 +59,7 @@ alias gf='git fetch'
 alias gfu='git fetch upstream'
 alias gmu='git merge upstream/master'
 alias gsu='git submodule update --init --recursive'
+alias gsp='git submodule foreach git pull origin master'
 
 # dbwebb
 alias dw='dbwebb'
