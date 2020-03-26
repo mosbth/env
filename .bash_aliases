@@ -1,5 +1,5 @@
 # new/used in 2020
-alias sc="scrot '%Y-%m-%d_%T_\$wx\$h.png' -e 'mv \$f ~/Pictures/Scrot; ls ~/Pictures/Scrot/\$f' -s"
+alias sc="scrot '%Y-%m-%d_%T_\$wx\$h.png' -e 'mv \$f ~/Pictures/Scrot; echo -n ~/Pictures/Scrot/\$f | xclip -selection c; xclip -selection c -o; echo' -s"
 
 # ls
 alias ls="ls -Fh"
