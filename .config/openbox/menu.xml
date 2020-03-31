@@ -33,6 +33,11 @@ k
 			</action>
 		</item>
 		<menu id="Applications" label="Applications">
+			<item label="OpenShot">
+				<action name="Execute">
+					<execute>openshot</execute>
+				</action>
+			</item>
 			<item label="Krita (paint)">
 				<action name="Execute">
 					<execute>krita</execute>
