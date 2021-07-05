@@ -19,6 +19,11 @@ install-mac:
 	rsync -av .vim ~
 	rsync -av .atom ~
 
+install-win:
+	install $(FILES) ~
+	rsync -av .vim ~
+	#rsync -av .atom ~
+
 profile:
 	touch ~/.profile
 	echo "source ~/.bashrc_my" >> ~/.profile
