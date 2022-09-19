@@ -5,12 +5,13 @@ PS1_ORIG="\[$green\]\h\[$white\]:\w$\[$reset\] "
 PS1_ALT1="\[$green\]\h\[$white\]:\w\n\[$green\]$\[$reset\] "
 PS1_ALT2="\[$green\]\w\n$\[$reset\] "
 PS1_ALT3="\[$green\]$\[$reset\] "
+PS1_ALT4="\[$green\]desktop\[$white\]:(\W)\n\[$green\]$\[$reset\] "
 PS1="$PS1_ALT1"
 
-export LC_CTYPE="C.UTF-8"
+#export LC_CTYPE="C.UTF-8"
 
-export PATH="${PATH}:/usr/local/sbin:/sbin:/usr/sbin"
-export PATH="./bin:bin/:vendor/bin:node_modules/.bin:$HOME/.composer/vendor/bin:$HOME/.npm-packages/bin:$HOME/bin:$PATH"
+#export PATH="${PATH}:/usr/local/sbin:/sbin:/usr/sbin"
+#export PATH="./bin:bin/:vendor/bin:node_modules/.bin:$HOME/.composer/vendor/bin:$HOME/.npm-packages/bin:$HOME/bin:$PATH"
 
 export EDITOR="vim"
 
